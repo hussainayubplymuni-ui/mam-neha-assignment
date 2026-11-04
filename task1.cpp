@@ -7,9 +7,28 @@
  Each exercise is written in its own function (task1 to task10).
  All exercises are called in order from the main() function.
  The personalization number 4827 is used for each exercise.
- Only Task 1 ,2 and 9 reads input from the user.
- All other tasks use values based on the assignment specifications
+ Only Task 9 reads input from the user.
+ All other tasks use fixed values based on the assignment specifications
  and personalization number.
+
+ Errors found and fixed during development:
+ Error 1 - Task 1 asked the user to enter two numbers. The brief says to
+           use the second (8) and last (7) digits of 4827, so these are
+           now fixed values.
+ Error 2 - Task 2 asked the user for the second number and printed the
+           digit sum twice. Now uses a fixed value (5); extra lines removed.
+ Error 3 - Tasks 3, 4 and 5 made their own local copy of 4827. In Tasks 4
+           and 5 it had the same name as the global personalizationNum,
+           which hid the global. Task 3 now uses the global, Task 4 uses a
+           variable called "number", and Task 5 calculates the month directly.
+ Error 4 - showVariables() (Task 10) had no prototype like the other
+           functions. Prototype added.
+ Error 5 - Task 9 got stuck in an endless loop if a letter was typed.
+           Now it clears the wrong input and asks again.
+ Error 6 - The output had uneven spacing (" Task 1 ", "Hello  welcome").
+           Output text tidied up.
+ Error 7 - This header said Tasks 1, 2 and 9 read input. Updated to say
+           only Task 9 reads input.
 */
 
 #include <iostream>
@@ -27,6 +46,7 @@ void task7(string name, int marks);   // Exercise 7 uses parameters
 void task8();
 double ComputeAverage();              // helper for Exercise 9
 void task9();
+void showVariables();                 // Error 4: prototype added (helper for Exercise 10)
 void task10();
 
 // Global variables (used by Task 10)
@@ -37,17 +57,18 @@ int globalCount = personalizationNum; // global counter starts at 4827
 //  main runs all ten exercises in order
 
 int main() {
-    cout << " Task 1 " << endl;  task1();
-    cout << "\n Task 2 " << endl;  task2();
-    cout << "\n Task 3 " << endl;  task3();
-    cout << "\n Task 4 " << endl;  task4();
-    cout << "\n Task 5 " << endl;  task5();
-    cout << "\nTask 6 " << endl;  task6();
-    cout << "\nTask 7 " << endl;  task7("4827", 27); // name + marks passed as parameters
-    cout << "\n Task 8 " << endl;
+    // Error 6: consistent spacing in the task headings
+    cout << "Task 1" << endl;     task1();
+    cout << "\nTask 2" << endl;   task2();
+    cout << "\nTask 3" << endl;   task3();
+    cout << "\nTask 4" << endl;   task4();
+    cout << "\nTask 5" << endl;   task5();
+    cout << "\nTask 6" << endl;   task6();
+    cout << "\nTask 7" << endl;   task7("4827", 27); // name + marks passed as parameters
+    cout << "\nTask 8" << endl;
     for (int i = 0; i < 5; i++) task8();     // Exercise 8 requires calling the function 5 times
-    cout << "\nTask 9 " << endl;  task9();
-    cout << "\n Task 10 " << endl; task10();
+    cout << "\nTask 9" << endl;   task9();
+    cout << "\nTask 10" << endl;  task10();
     return 0;
 }
 
@@ -147,7 +168,7 @@ void task6() {
 //  last two digits of 4827.
 
 void task7(string name, int marks) {
-    cout << "Hello  welcome " << name << endl;
+    cout << "Hello, welcome " << name << endl;   // Error 6: double space removed
     cout << "Your marks are " << marks << endl;
 }
 //  Task 8 - Static Local Variable
