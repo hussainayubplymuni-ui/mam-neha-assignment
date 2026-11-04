@@ -118,3 +118,18 @@ void task1() {
     cout << "Variables and Output" << endl;
     cout << "Sum : " << a + b << endl;
 }
+//  Task 2 - Arithmetic Operations
+//  Multiplies two numbers and prints the result.
+//  Personalization: first number is the sum of the digits of
+//  4827 (4+8+2+7 = 21); the user enters the second number.
+
+void task2() {
+    cout << "My personalization number is 4827" << endl;
+    cout << " Sum of digits is : 21" << endl;
+    int a = 21;
+    cout << "First number is : 21 " << endl;
+    int b;
+    cout << "Enter  second number : " << endl;
+    cin >> b;
+    cout << "Multiplication of two numbers is : " << a * b << endl;
+}
