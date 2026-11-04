@@ -256,5 +256,26 @@ void task9() {
     double average = ComputeAverage();
     cout << "The average of the marks is : " << average << endl;
 }
+//  Task 10 - Global vs Static Variables
+//  Global and static variables keep their value between calls,
+//  but a global is reachable from any function while a static
+//  is only reachable inside its own function; a local resets
+//  every call. All three start from 4827.
+void showVariables() {
+    static int staticCount = personalizationNum; // static: persists across calls
+    int localCount = personalizationNum;         // local: resets every call
+
+    globalCount++;
+    staticCount++;
+    localCount++;
+    cout << "Global: " << globalCount << endl;
+    cout << "Static: " << staticCount << endl;
+    cout << "Local: " << localCount << endl;
+    cout << endl;
+}
+
+void task10() {
+    for (int i = 0; i < 3; i++) showVariables();
+}
 
 
