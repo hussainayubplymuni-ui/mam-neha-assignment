@@ -132,3 +132,15 @@ void task2() {
     cout << "Second number is : " << b << endl;
     cout << "Result = " << a * b << endl;
 }
+// Task 3 - Loops / Iterations
+// Prints a multiplication table from 1 up to N.
+// Personalization: N is calculated using 4827 % 10 + 1, which equals 8.
+// Error 3: uses the global variable.
+
+void task3() {
+    int N = (personalizationNum % 10) + 1;
+
+    for (int i = 1; i <= N; i++) {
+        cout << N << " x " << i << " = " << N * i << endl;
+    }
+}
