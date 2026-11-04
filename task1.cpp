@@ -204,3 +204,14 @@ void task7(string name, int marks) {
     cout << "Hello  welcome " << name << endl;
     cout << "Your marks are " << marks << endl;
 }
+//  Task 8 - Static Local Variable
+//  Displays the personalization number and the function call
+//  count using a static local variable.
+//  Personalization: called 5 times, shows 4827 each time.
+void task8() {
+    static int count = 0;   // static: keeps its value between calls
+    count++;
+    cout << "My personalization number is 4827" << endl;
+    cout << "Total function count is " << count << endl;
+}
+
