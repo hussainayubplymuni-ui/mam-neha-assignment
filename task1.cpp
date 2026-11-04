@@ -184,3 +184,13 @@ void task5() {
         default: cout << "Invalid month" << endl;
     }
 }
+// Task 6 - Arrays
+// Creates an array of five numbers and prints its third value.
+// Personalization: One value in the array is the last digit of 4827 (7).
+
+void task6() {
+    int numbers[5] = {10, 20, 7, 40, 50};
+
+    // Arrays start at index 0, so numbers[2] is the third value
+    cout << "Third value = " << numbers[2] << endl;
+}
