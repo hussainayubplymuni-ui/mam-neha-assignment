@@ -118,18 +118,17 @@ void task1() {
     cout << "Variables and Output" << endl;
     cout << "Sum : " << a + b << endl;
 }
-//  Task 2 - Arithmetic Operations
-//  Multiplies two numbers and prints the result.
-//  Personalization: first number is the sum of the digits of
-//  4827 (4+8+2+7 = 21); the user enters the second number.
+// Task 2 - Arithmetic Operations
+// Multiplies two numbers and displays the result.
+// Personalization: The first number is the sum of the digits of 4827 (4+8+2+7 = 21).
+// The second number is 5 (chosen value).
+// Error 2: no user input, duplicate output lines removed.
 
 void task2() {
-    cout << "My personalization number is 4827" << endl;
-    cout << " Sum of digits is : 21" << endl;
     int a = 21;
-    cout << "First number is : 21 " << endl;
-    int b;
-    cout << "Enter  second number : " << endl;
-    cin >> b;
-    cout << "Multiplication of two numbers is : " << a * b << endl;
+    int b = 5;
+
+    cout << "First number is : " << a << endl;
+    cout << "Second number is : " << b << endl;
+    cout << "Result = " << a * b << endl;
 }
