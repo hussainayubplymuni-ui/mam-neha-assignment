@@ -215,3 +215,38 @@ void task8() {
     cout << "Total function count is " << count << endl;
 }
 
+//  Task 9 - Debugging (ComputeAverage)
+//  Reads marks until -1 is entered, ignores negative marks,
+//  and returns the average of the valid marks as a double.
+//  The four original bugs are documented inline below.
+double ComputeAverage() {
+    int total = 0;
+    int marks = 0;
+    int count = 0;
+    do {
+        cin >> marks;
+        if (marks >= 0) {
+            total = total + marks;
+            // Bug 1: original code added negative marks too.
+            // Fix:  only add marks that are zero or positive.
+            count++;
+            // Bug 2: original code counted every input.
+            // Fix:  count only valid marks.
+        }
+    } while (marks != -1);
+    // Bug 3: original code could divide by zero.
+    // Fix:  if no valid marks were entered, return 0.0.
+    if (count == 0) {
+        return 0.0;
+    }
+    // Bug 4: original code used integer division.
+    // Fix:  cast total to double so the average can include decimals.
+    return static_cast<double>(total) / count;
+}
+
+void task9() {
+    cout << "Enter marks, also enter -1 when you want to stop :" << endl;
+    double average = ComputeAverage();
+    cout << "The average of the marks is : " << average << endl;
+}
+
