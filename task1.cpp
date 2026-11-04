@@ -144,3 +144,17 @@ void task3() {
         cout << N << " x " << i << " = " << N * i << endl;
     }
 }
+// Task 4 - If-Else Conditions
+// Checks whether a number is even or odd.
+// Personalization: uses the full personalization number 4827 (odd).
+// Error 3: variable renamed to "number" so it does not hide the global.
+
+void task4() {
+    int number = 4827;
+
+    if (number % 2 == 0) {
+        cout << number << " is even" << endl;
+    } else {
+        cout << number << " is odd" << endl;
+    }
+}
