@@ -17,10 +17,11 @@
            now fixed values.
  Error 2 - Task 2 asked the user for the second number and printed the
            digit sum twice. Now uses a fixed value (5); extra lines removed.
- Error 3 - Tasks 3, 4 and 5 made their own local copy of 4827. In Tasks 4
-           and 5 it had the same name as the global personalizationNum,
-           which hid the global. Task 3 now uses the global, Task 4 uses a
-           variable called "number", and Task 5 calculates the month directly.
+ Error 3 - (found in my first attempt, Version 1) Tasks 3, 4 and 5 made
+           their own local copy of 4827. In Tasks 4 and 5 it had the same
+           name as the global personalizationNum, which hid the global.
+           In this version Task 3 uses the global, Task 4 uses a variable
+           called "number", and Task 5 calculates the month directly.
  Error 4 - showVariables() (Task 10) had no prototype like the other
            functions. Prototype added.
  Error 5 - Task 9 got stuck in an endless loop if a letter was typed.
