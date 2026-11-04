@@ -194,3 +194,13 @@ void task6() {
     // Arrays start at index 0, so numbers[2] is the third value
     cout << "Third value = " << numbers[2] << endl;
 }
+//  Task 7 - Functions with Parameters
+//  Accepts a name and marks as parameters and displays a
+//  personalized welcome message with the marks.
+//  Personalization: 4827 passed as name, marks (27) from the
+//  last two digits of 4827.
+
+void task7(string name, int marks) {
+    cout << "Hello  welcome " << name << endl;
+    cout << "Your marks are " << marks << endl;
+}
