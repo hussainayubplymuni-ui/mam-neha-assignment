@@ -12,24 +12,21 @@
  and personalization number.
 
  Errors found and fixed during development:
- Error 1 - Task 1 asked the user to enter two numbers. The brief says to
-           use the second (8) and last (7) digits of 4827, so these are
-           now fixed values.
- Error 2 - Task 2 asked the user for the second number and printed the
-           digit sum twice. Now uses a fixed value (5); extra lines removed.
- Error 3 - (found in my first attempt, Version 1) Tasks 3, 4 and 5 made
-           their own local copy of 4827. In Tasks 4 and 5 it had the same
-           name as the global personalizationNum, which hid the global.
-           In this version Task 3 uses the global, Task 4 uses a variable
-           called "number", and Task 5 calculates the month directly.
- Error 4 - showVariables() (Task 10) had no prototype like the other
-           functions. Prototype added.
- Error 5 - Task 9 got stuck in an endless loop if a letter was typed.
-           Now it clears the wrong input and asks again.
- Error 6 - The output had uneven spacing (" Task 1 ", "Hello  welcome").
-           Output text tidied up.
- Error 7 - This header said Tasks 1, 2 and 9 read input. Updated to say
-           only Task 9 reads input.
+ Error 1 -  Task 1: Asked for input instead of using 8 and 7 
+ Fix: Used 8 and 7 directly.
+ Error 2 - Asked for input and printed the result twice
+ Fix: Used 5 directly and removed the extra lines.
+ Error 3 - Tasks 3, 4 and 5  Used extra copies of 4827 instead of the global value.
+ Fix: Used the global value in Task 3 AND number in Task 4 and calculated the month directly in Task 5
+ Error 4 - Task 10: Missing function prototype
+ Fix: Added The prototype
+ Error 5 -Task 9: Got stuck when a letter was entered
+ Fix: Clears the wrong input and asks again
+ Error 6 - Error 6: Output Had uneven spacing
+ Fix: Cleaned up the output text
+
+ Error 7 Error 7: Header said Tasks 1, 2 and 9 read input
+ Fix: Updated it to say only Task 9 reads input
 */
 
 #include <iostream>
@@ -58,25 +55,25 @@ int globalCount = personalizationNum; // global counter starts at 4827
 //  main runs all ten exercises in order
 
 int main() {
-    // Error 6: consistent spacing in the task headings
+    // Error 6: consistent Spacing in the task Headings
     cout << "Task 1" << endl;     task1();
     cout << "\nTask 2" << endl;   task2();
     cout << "\nTask 3" << endl;   task3();
     cout << "\nTask 4" << endl;   task4();
     cout << "\nTask 5" << endl;   task5();
     cout << "\nTask 6" << endl;   task6();
-    cout << "\nTask 7" << endl;   task7("4827", 27); // name + marks passed as parameters
+    cout << "\nTask 7" << endl;   task7("4827", 27); // name + marks Passed as parameters
     cout << "\nTask 8" << endl;
-    for (int i = 0; i < 5; i++) task8();     // Exercise 8 requires calling the function 5 times
+    for (int i = 0; i < 5; i++) task8();     // Exercise 8 Requires calling the function 5 times
     cout << "\nTask 9" << endl;   task9();
     cout << "\nTask 10" << endl;  task10();
     return 0;
 }
 
 
-// Task 1 - Variables & Output
-// Declares two integers and prints their sum.
-// Personalization: Uses the second digit (8) and last digit (7) of 4827.
+// Task 1 is  Variables And  Output
+//  it declares two integers and prints their sum
+// Personalization: Uses the second digit (8) and last digit (7) of 4827
 // Error 1: no user input.
 
 void task1() {
@@ -86,11 +83,11 @@ void task1() {
     cout << "Variables and Output" << endl;
     cout << "Sum : " << a + b << endl;
 }
-// Task 2 - Arithmetic Operations
-// Multiplies two numbers and displays the result.
+// Task 2 is Arithmetic Operations
+//  it multiplies two numbers and displays the result
 // Personalization: The first number is the sum of the digits of 4827 (4+8+2+7 = 21).
-// The second number is 5 (chosen value).
-// Error 2: no user input, duplicate output lines removed.
+// The second number is 5 which is chosen value
+// Error 2: no user Input,, duplicate output lines removed.
 
 void task2() {
     int a = 21;
@@ -101,8 +98,8 @@ void task2() {
     cout << "Result = " << a * b << endl;
 }
 // Task 3 - Loops / Iterations
-// Prints a multiplication table from 1 up to N.
-// Personalization: N is calculated using 4827 % 10 + 1, which equals 8.
+// it Prints a multiplication table from 1 up to N
+// Personalization: N is calculated using 4827 % 10 + 1, which equals  to 8.
 // Error 3: uses the global variable.
 
 void task3() {
@@ -113,8 +110,8 @@ void task3() {
     }
 }
 // Task 4 - If-Else Conditions
-// Checks whether a number is even or odd.
-// Personalization: uses the full personalization number 4827 (odd).
+//  it Checks whether a number is even or odd.
+// Personalization: Uses the Full personalization number 4827 (odd).
 // Error 3: variable renamed to "number" so it does not hide the global.
 
 void task4() {
@@ -129,9 +126,9 @@ void task4() {
 
 
 // Task 5 - Switch Case
-// Displays the month name for a number between 1 and 12.
-// Personalization: month = (4827 % 12) + 1 = 4, so it prints April.
-// Error 3: no local copy of personalizationNum any more.
+// it Displays the month name for a number between 1 and 12.
+// Personalization: month = (4827 % 12) + 1 = 4 So it prints April.
+// Error 3: no local copy of personalizationNum any more 
 
 void task5() {
     int month = (4827 % 12) + 1;
@@ -153,7 +150,7 @@ void task5() {
     }
 }
 // Task 6 - Arrays
-// Creates an array of five numbers and prints its third value.
+// it Creates a array of five numbers and prints its third value
 // Personalization: One value in the array is the last digit of 4827 (7).
 
 void task6() {
@@ -163,19 +160,19 @@ void task6() {
     cout << "Third value = " << numbers[2] << endl;
 }
 //  Task 7 - Functions with Parameters
-//  Accepts a name and marks as parameters and displays a
-//  personalized welcome message with the marks.
-//  Personalization: 4827 passed as name, marks (27) from the
-//  last two digits of 4827.
+// it  Accepts a name and marks as parameters and displays a
+//  personalized welcome message with the marks
+//  Personalization: 4827 passed as name and  marks (27) from the
+//  last two digits of 4827 which is personalization number
 
 void task7(string name, int marks) {
     cout << "Hello, welcome " << name << endl;   // Error 6: double space removed
     cout << "Your marks are " << marks << endl;
 }
 //  Task 8 - Static Local Variable
-//  Displays the personalization number and the function call
+//  it Displays the personalization number and the function call
 //  count using a static local variable.
-//  Personalization: called 5 times, shows 4827 each time.
+//  Personalization: called 5 times  Shows 4827 each time.
 void task8() {
     static int count = 0;   // static: keeps its value between calls
     count++;
@@ -184,8 +181,8 @@ void task8() {
 }
 
 //  Task 9 - Debugging (ComputeAverage)
-//  Reads marks until -1 is entered, ignores negative marks,
-//  and returns the average of the valid marks as a double.
+//  it Reads marks until -1 is entered ignoring negative marks
+//  and returns the average of the valid marks as a double
 //  The four original bugs are documented inline below.
 double ComputeAverage() {
     int total = 0;
@@ -230,8 +227,8 @@ void task9() {
 //  is only reachable inside its own function; a local resets
 //  every call. All three start from 4827.
 void showVariables() {
-    static int staticCount = personalizationNum; // static: persists across calls
-    int localCount = personalizationNum;         // local: resets every call
+    static int staticCount = personalizationNum; // static persists across calls while local on the other hand resets every  call
+    int localCount = personalizationNum;         
 
     globalCount++;
     staticCount++;
