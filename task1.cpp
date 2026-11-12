@@ -49,7 +49,7 @@ void task10();
 
 // Global variables (used by Task 10)
 int personalizationNum = 4827;        // global from my personalization number
-int globalCount = personalizationNum; // global counter starts at 4827
+int globalCount = personalizationNum; 
 
 // using main
 //  main runs all ten exercises in order
@@ -180,34 +180,35 @@ void task8() {
     cout << "Total function count is " << count << endl;
 }
 
-//  Task 9 - Debugging (ComputeAverage)
-//  it Reads marks until -1 is entered ignoring negative marks
-//  and returns the average of the valid marks as a double
-//  The four original bugs are documented inline below.
+// Task 9 - Debugging
+// reads marks until -1 and calculates the average
+// four original Bugs are documented Below
 double ComputeAverage() {
     int total = 0;
     int marks = 0;
     int count = 0;
     do {
         cin >> marks;
-        // Error 5: if a letter is typed, clear it and ask again
+        // Error 5 IF a Letter is entered ask the user to try again
         if (cin.fail()) {
-            cin.clear();             // reset cin so it works again
-            cin.ignore(1000, '\n');  // throw away the wrong input
+            cin.clear();             
+            cin.ignore(1000, '\n');  
             cout << "Please enter a number : " << endl;
-            marks = 0;               // so the loop does not stop
+            marks = 0;               
         }
         else if (marks >= 0) {
             total = total + marks;
-            // Bug 1: original code added negative marks too.
-            // Fix:  only add marks that are zero or positive.
+             // Bug 1: original code added negative marks too.
+            // Fix:  Only Add marks THAT are zero or positive
+             
             count++;
-            // Bug 2: original code counted every input.
-            // Fix:  count only valid marks.
+            // Bug 2: original Code counted every Input
+            // Fix:  Count only VALID marks
         }
     } while (marks != -1);
-    // Bug 3: original code could divide by zero.
+    // Bug 3: Original code Could be divided by zero 
     // Fix:  if no valid marks were entered, return 0.0.
+  
     if (count == 0) {
         return 0.0;
     }
