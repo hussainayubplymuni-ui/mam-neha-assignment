@@ -1,21 +1,21 @@
-//  LHPK4014 - Software Engineering 1
-//Assessment 1 (W1): Set Exercises - Combined Program
-//  Personalization Number: 4827
+// LHPK4014 - Software Engineering I
 
+//Assessment 1 (W1) Joint Program: Set Exercises
+
+//Personalization Number: 4827
 /*
- This program consists of 10 short exercises.
+ The program includes 10 short exercises
  Each exercise is written in its own function (task1 to task10).
  All exercises are called in order from the main() function.
  The personalization number 4827 is used for each exercise.
  Only Task 9 reads input from the user.
- All other tasks use fixed values based on the assignment specifications
- and personalization number.
+ All other tasks use fixed values as required by the assignment.
 
  Errors found and fixed during development:
- Error 1 -  Task 1: Asked for input instead of using 8 and 7 
- Fix: Used 8 and 7 directly.
- Error 2 - Asked for input and printed the result twice
- Fix: Used 5 directly and removed the extra lines.
+ Error 1 -  Task1 Asked for input Instead of using 8 and 7 
+ Fix: Used 8 and 7 directly and problem Fixed
+ Error 2 - Asked for Input and printed The result twice
+ Fix: used 5 directly and removed The extra lines
  Error 3 - Tasks 3, 4 and 5  Used extra copies of 4827 instead of the global value.
  Fix: Used the global value in Task 3 AND number in Task 4 and calculated the month directly in Task 5
  Error 4 - Task 10: Missing function prototype
@@ -86,21 +86,19 @@ void task1() {
 // Task 2 is Arithmetic Operations
 //  it multiplies two numbers and displays the result
 // Personalization: The first number is the sum of the digits of 4827 (4+8+2+7 = 21).
-// The second number is 5 which is chosen value
-// Error 2: no user Input,, duplicate output lines removed.
+// the second number is fixed at 5
+// Error 2: removed user input and Duplicate output
 
 void task2() {
     int a = 21;
     int b = 5;
 
-    cout << "First number is : " << a << endl;
-    cout << "Second number is : " << b << endl;
+    cout << "1st number is : " << a << endl;
+    cout << "2nd number is : " << b << endl;
     cout << "Result = " << a * b << endl;
 }
-// Task 3 - Loops / Iterations
-// it Prints a multiplication table from 1 up to N
-// Personalization: N is calculated using 4827 % 10 + 1, which equals  to 8.
-// Error 3: uses the global variable.
+// Task 3 prints a Multiplication table up to N and Personalization  N is 8
+// Error 3: Uses the Global variable
 
 void task3() {
     int N = (personalizationNum % 10) + 1;
@@ -109,10 +107,8 @@ void task3() {
         cout << N << " x " << i << " = " << N * i << endl;
     }
 }
-// Task 4 - If-Else Conditions
-//  it Checks whether a number is even or odd.
-// Personalization: Uses the Full personalization number 4827 (odd).
-// Error 3: variable renamed to "number" so it does not hide the global.
+// Task 4 checks if a number is even or odd and personalization uses 4827 which is ALSO odd
+// Error 3: renamed the Variable to number
 
 void task4() {
     int number = 4827;
@@ -125,10 +121,9 @@ void task4() {
 }
 
 
-// Task 5 - Switch Case
-// it Displays the month name for a number between 1 and 12.
-// Personalization: month = (4827 % 12) + 1 = 4 So it prints April.
-// Error 3: no local copy of personalizationNum any more 
+// Task 5 Displays the month name and personalization uses 4827 to gett april
+
+// Error 3: removed Extra variable 
 
 void task5() {
     int month = (4827 % 12) + 1;
@@ -160,18 +155,14 @@ void task6() {
     cout << "Third value = " << numbers[2] << endl;
 }
 //  Task 7 - Functions with Parameters
-// it  Accepts a name and marks as parameters and displays a
-//  personalized welcome message with the marks
-//  Personalization: 4827 passed as name and  marks (27) from the
-//  last two digits of 4827 which is personalization number
+// Displays a WELCOME message with the name and marks and personalization uses 4827 and 27 marks
 
 void task7(string name, int marks) {
-    cout << "Hello, welcome " << name << endl;   // Error 6: double space removed
+    cout << "hello welcome " << name << endl;   // Error 6: double space removed
     cout << "Your marks are " << marks << endl;
 }
 //  Task 8 - Static Local Variable
-//  it Displays the personalization number and the function call
-//  count using a static local variable.
+// Displays 4827 and counts how many times the function is called
 //  Personalization: called 5 times  Shows 4827 each time.
 void task8() {
     static int count = 0;   // static: keeps its value between calls
